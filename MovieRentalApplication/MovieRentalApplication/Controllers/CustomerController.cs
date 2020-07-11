@@ -20,5 +20,13 @@ namespace MovieRentalApplication.Controllers
 
             return View(Customers);
         }
+		[Route("Customer/Details/{id}/{Name}")]
+		public ActionResult Details(int id,string Name)
+		{
+			Customer aCustomer = new Customer();
+			aCustomer.id = id;
+			aCustomer.Name = Name;
+			return View(aCustomer);
+		}		
     }
 }
