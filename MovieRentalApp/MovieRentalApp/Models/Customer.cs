@@ -9,5 +9,8 @@ namespace MovieRentalApp.Models
 	{
 		public int id { get; set; }
 		public string Name { get; set; }
+		public bool IsSubscribeToNewsLetter { get; set; }
+		public MembershipType MembershipType { get; set; }
+		public int MembershipTypeId { get; set; }
 	}
 }

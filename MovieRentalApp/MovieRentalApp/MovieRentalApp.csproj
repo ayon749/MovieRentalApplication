@@ -137,8 +137,33 @@
     <Compile Include="Migrations\202007121312381_version1.designer.cs">
       <DependentUpon>202007121312381_version1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007121515126_IsSubscribetoNewsLetterCustomer.cs" />
+    <Compile Include="Migrations\202007121515126_IsSubscribetoNewsLetterCustomer.designer.cs">
+      <DependentUpon>202007121515126_IsSubscribetoNewsLetterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007121518227_MembershipType.cs" />
+    <Compile Include="Migrations\202007121518227_MembershipType.designer.cs">
+      <DependentUpon>202007121518227_MembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007121521401_MembershipType1.cs" />
+    <Compile Include="Migrations\202007121521401_MembershipType1.designer.cs">
+      <DependentUpon>202007121521401_MembershipType1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007121525065_CustomerLast2Property.cs" />
+    <Compile Include="Migrations\202007121525065_CustomerLast2Property.designer.cs">
+      <DependentUpon>202007121525065_CustomerLast2Property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007121527054_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\202007121527054_PopulateMembershipType.designer.cs">
+      <DependentUpon>202007121527054_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007121548395_PopulateMembershipType2.cs" />
+    <Compile Include="Migrations\202007121548395_PopulateMembershipType2.designer.cs">
+      <DependentUpon>202007121548395_PopulateMembershipType2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\ProjectDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -202,6 +227,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007121312381_version1.resx">
       <DependentUpon>202007121312381_version1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121515126_IsSubscribetoNewsLetterCustomer.resx">
+      <DependentUpon>202007121515126_IsSubscribetoNewsLetterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121518227_MembershipType.resx">
+      <DependentUpon>202007121518227_MembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121521401_MembershipType1.resx">
+      <DependentUpon>202007121521401_MembershipType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121525065_CustomerLast2Property.resx">
+      <DependentUpon>202007121525065_CustomerLast2Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121527054_PopulateMembershipType.resx">
+      <DependentUpon>202007121527054_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007121548395_PopulateMembershipType2.resx">
+      <DependentUpon>202007121548395_PopulateMembershipType2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
