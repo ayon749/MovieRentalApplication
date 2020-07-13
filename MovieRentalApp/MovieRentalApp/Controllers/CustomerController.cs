@@ -20,7 +20,7 @@ namespace MovieRentalApp.Controllers
 		//[Route("")]
 		public ActionResult Details(int id)
 		{
-			var customer = db.Customers.SingleOrDefault(a => a.id == id);
+			var customer = db.Customers.Include(c=>c.MembershipType).SingleOrDefault(a => a.id == id);
 			if (customer == null)
 			{
 				return HttpNotFound();

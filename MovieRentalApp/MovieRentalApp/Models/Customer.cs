@@ -15,5 +15,6 @@ namespace MovieRentalApp.Models
 		public bool IsSubscribeToNewsLetter { get; set; }
 		public MembershipType MembershipType { get; set; }
 		public int MembershipTypeId { get; set; }
+		public DateTime? BirthDate { get; set; }
 	}
 }

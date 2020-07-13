@@ -173,8 +173,41 @@
     <Compile Include="Migrations\202007131534147_updateMemberShiptype.designer.cs">
       <DependentUpon>202007131534147_updateMemberShiptype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007131919304_CustomerBirthdayPropertyAdded.cs" />
+    <Compile Include="Migrations\202007131919304_CustomerBirthdayPropertyAdded.designer.cs">
+      <DependentUpon>202007131919304_CustomerBirthdayPropertyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131935297_CustomerDateTImeNullable.cs" />
+    <Compile Include="Migrations\202007131935297_CustomerDateTImeNullable.designer.cs">
+      <DependentUpon>202007131935297_CustomerDateTImeNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131950361_MovieModelPropertiesAdded.cs" />
+    <Compile Include="Migrations\202007131950361_MovieModelPropertiesAdded.designer.cs">
+      <DependentUpon>202007131950361_MovieModelPropertiesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131952331_GenreModelAdded.cs" />
+    <Compile Include="Migrations\202007131952331_GenreModelAdded.designer.cs">
+      <DependentUpon>202007131952331_GenreModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131954294_GenreModelAdded1.cs" />
+    <Compile Include="Migrations\202007131954294_GenreModelAdded1.designer.cs">
+      <DependentUpon>202007131954294_GenreModelAdded1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131956390_MovieModelGenrePropertyAdded.cs" />
+    <Compile Include="Migrations\202007131956390_MovieModelGenrePropertyAdded.designer.cs">
+      <DependentUpon>202007131956390_MovieModelGenrePropertyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007132001322_AddGenres.cs" />
+    <Compile Include="Migrations\202007132001322_AddGenres.designer.cs">
+      <DependentUpon>202007132001322_AddGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007132006465_MovieModelStockPropertyAdded.cs" />
+    <Compile Include="Migrations\202007132006465_MovieModelStockPropertyAdded.designer.cs">
+      <DependentUpon>202007132006465_MovieModelStockPropertyAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\ProjectDbContext.cs" />
@@ -267,6 +300,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007131534147_updateMemberShiptype.resx">
       <DependentUpon>202007131534147_updateMemberShiptype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131919304_CustomerBirthdayPropertyAdded.resx">
+      <DependentUpon>202007131919304_CustomerBirthdayPropertyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131935297_CustomerDateTImeNullable.resx">
+      <DependentUpon>202007131935297_CustomerDateTImeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131950361_MovieModelPropertiesAdded.resx">
+      <DependentUpon>202007131950361_MovieModelPropertiesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131952331_GenreModelAdded.resx">
+      <DependentUpon>202007131952331_GenreModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131954294_GenreModelAdded1.resx">
+      <DependentUpon>202007131954294_GenreModelAdded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131956390_MovieModelGenrePropertyAdded.resx">
+      <DependentUpon>202007131956390_MovieModelGenrePropertyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007132001322_AddGenres.resx">
+      <DependentUpon>202007132001322_AddGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007132006465_MovieModelStockPropertyAdded.resx">
+      <DependentUpon>202007132006465_MovieModelStockPropertyAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,3 +10,12 @@
 @Model.Name
 </h1>
 
+<ul>
+	<li>
+		@Model.MembershipType.Name
+	</li>
+	@if (Model.BirthDate != null)
+	{
+		<li>@Model.BirthDate</li>
+	}
+</ul>
