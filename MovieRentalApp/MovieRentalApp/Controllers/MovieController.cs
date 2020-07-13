@@ -1,17 +1,27 @@
-﻿using System;
+﻿using MovieRentalApp.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 
 namespace MovieRentalApp.Controllers
 {
     public class MovieController : Controller
     {
-        // GET: Movie
-        public ActionResult Index()
+		private ProjectDbContext db = new ProjectDbContext();
+		// GET: Movie
+		public ActionResult Index()
         {
-            return View();
+			var movies = db.Movies.Include(a => a.Genre).ToList();
+            return View(movies);
         }
+		public ActionResult Details(int id)
+		{
+			var movies = db.Movies.Include(c=>c.Genre).FirstOrDefault(a => a.id == id);
+			return View(movies);
+		}
     }
 }

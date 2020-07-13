@@ -1,0 +1,27 @@
+﻿@model MovieRentalApp.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie</h2>
+
+<h1>@Model.MovieName</h1>
+<ul>
+	<li>
+		Genre: @Model.Genre.GenreName
+	</li>
+	<li>
+		Realese Date : @Model.RealeseDate
+	</li>
+	<li>
+		Added Time : @Model.AddTime
+	</li>
+	<li>
+		Stock Available: @Model.NumberInStock
+	</li>
+</ul>
+
+
+
+
