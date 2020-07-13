@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 
 namespace MovieRentalApp.Controllers
@@ -13,7 +14,7 @@ namespace MovieRentalApp.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-			var customers = db.Customers;
+			var customers = db.Customers.Include(c => c.MembershipType).ToList();
             return View(customers);
         }
 		//[Route("")]

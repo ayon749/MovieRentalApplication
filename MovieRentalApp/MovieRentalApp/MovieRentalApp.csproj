@@ -165,6 +165,14 @@
     <Compile Include="Migrations\202007131340268_applyAnnotationTOCustomerModel.designer.cs">
       <DependentUpon>202007131340268_applyAnnotationTOCustomerModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007131532430_PropertyAddedToMembershipTypeModel.cs" />
+    <Compile Include="Migrations\202007131532430_PropertyAddedToMembershipTypeModel.designer.cs">
+      <DependentUpon>202007131532430_PropertyAddedToMembershipTypeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007131534147_updateMemberShiptype.cs" />
+    <Compile Include="Migrations\202007131534147_updateMemberShiptype.designer.cs">
+      <DependentUpon>202007131534147_updateMemberShiptype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -253,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007131340268_applyAnnotationTOCustomerModel.resx">
       <DependentUpon>202007131340268_applyAnnotationTOCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131532430_PropertyAddedToMembershipTypeModel.resx">
+      <DependentUpon>202007131532430_PropertyAddedToMembershipTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007131534147_updateMemberShiptype.resx">
+      <DependentUpon>202007131534147_updateMemberShiptype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
