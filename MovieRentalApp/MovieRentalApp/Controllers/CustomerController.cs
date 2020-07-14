@@ -30,5 +30,36 @@ namespace MovieRentalApp.Controllers
 				return View(customer);
 			}
 		}
+		public ActionResult New()
+		{
+			ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "id", "Name");
+			return View();
+		}
+		[HttpPost]
+		public ActionResult Save(Customer customer)
+		{
+			if (customer.id == 0)
+			{
+				db.Customers.Add(customer);
+			}
+			else
+			{
+				var aCustomer = db.Customers.FirstOrDefault(c => c.id == customer.id);
+				aCustomer.Name = customer.Name;
+				aCustomer.BirthDate = customer.BirthDate;
+				aCustomer.MembershipTypeId = customer.MembershipTypeId;
+				aCustomer.IsSubscribeToNewsLetter = customer.IsSubscribeToNewsLetter; 
+			}
+			db.SaveChanges();
+			return RedirectToAction("Index", "Customer");
+		}
+		public ActionResult Edit(int id)
+		{
+			var customer= db.Customers.FirstOrDefault(a => a.id==id);
+			ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "id", "Name");
+			return View("New", customer);
+
+		}
+
     }
 }
