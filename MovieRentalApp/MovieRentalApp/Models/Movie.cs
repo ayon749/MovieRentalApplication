@@ -9,8 +9,8 @@ namespace MovieRentalApp.Models
 	{
 		public int id { get; set; }
 		public string MovieName { get; set; }
-		public DateTime RealeseDate { get; set; }
-		public DateTime AddTime { get; set; }
+		public Nullable<DateTime> RealeseDate { get; set; }
+		public Nullable<DateTime> AddTime { get; set; }
 		public int NumberInStock { get; set; }
 		public Genre Genre { get; set; }
 		public int GenreId { get; set; }

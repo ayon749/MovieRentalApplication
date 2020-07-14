@@ -1,0 +1,30 @@
+﻿@model MovieRentalApp.Models.Movie
+@{
+	ViewBag.Title = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Movie</h2>
+
+@using (Html.BeginForm("Create","Movie"))
+{
+	<div class="form-group">
+		@Html.LabelFor(m => m.MovieName, "Name")
+		@Html.TextBoxFor(m => m.MovieName, new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.RealeseDate, "Realese Date")
+		@Html.TextBoxFor(m => m.RealeseDate, new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.GenreId, "Genre")
+		@Html.DropDownList("GenreId", null, "--Select Genre--", new { @class = "form-control" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.NumberInStock, "Number In Stock")
+		@Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control" })
+	</div>
+	@Html.HiddenFor(m=>m.id)
+	<button type="submit"class="btn btn-primary">Save</button>
+}
+
