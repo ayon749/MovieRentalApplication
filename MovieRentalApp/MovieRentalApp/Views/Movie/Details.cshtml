@@ -12,10 +12,10 @@
 		Genre: @Model.Genre.GenreName
 	</li>
 	<li>
-		Realese Date : @Model.RealeseDate
+		Realese Date : @Model.RealeseDate.ToLongDateString()
 	</li>
 	<li>
-		Added Time : @Model.AddTime
+		Added Time : @Model.AddTime.ToLongDateString()
 	</li>
 	<li>
 		Stock Available: @Model.NumberInStock
