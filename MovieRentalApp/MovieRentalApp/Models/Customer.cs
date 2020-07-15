@@ -16,6 +16,7 @@ namespace MovieRentalApp.Models
 		public MembershipType MembershipType { get; set; }
 		public int MembershipTypeId { get; set; }
 		[Display(Name="Date Of Birth")]
+		 [Min18YearOfAgeIfAMember]
 		public DateTime? BirthDate { get; set; }
 	}
 }

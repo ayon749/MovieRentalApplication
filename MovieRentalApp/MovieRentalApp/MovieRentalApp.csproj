@@ -213,10 +213,15 @@
     <Compile Include="Migrations\202007141210304_moviemodelchanged2.designer.cs">
       <DependentUpon>202007141210304_moviemodelchanged2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007151343498_Moviemodelchanged4.cs" />
+    <Compile Include="Migrations\202007151343498_Moviemodelchanged4.designer.cs">
+      <DependentUpon>202007151343498_Moviemodelchanged4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearOfAgeIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\ProjectDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007141210304_moviemodelchanged2.resx">
       <DependentUpon>202007141210304_moviemodelchanged2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151343498_Moviemodelchanged4.resx">
+      <DependentUpon>202007151343498_Moviemodelchanged4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

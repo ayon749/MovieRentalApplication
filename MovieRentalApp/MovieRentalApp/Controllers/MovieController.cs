@@ -26,11 +26,20 @@ namespace MovieRentalApp.Controllers
 		public ActionResult Create()
 		{
 			ViewBag.GenreId = new SelectList(db.Genres, "Id", "GenreName");
+			ViewBag.IsNew = true;
 			return View();
 		}
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult Create(Movie movie)
 		{
+			if (!ModelState.IsValid)
+			{
+				ViewBag.GenreId = new SelectList(db.Genres, "Id", "GenreName");
+			
+				return View("Create", movie);
+
+			}
 			if (movie.id == 0)
 			{
 				db.Movies.Add(movie);
@@ -50,6 +59,7 @@ namespace MovieRentalApp.Controllers
 		public ActionResult Edit(int id)
 		{
 			var movie = db.Movies.FirstOrDefault(a => a.id == id);
+			ViewBag.IsNew = false;
 			ViewBag.GenreId = new SelectList(db.Genres, "id", "GenreName");
 			return View("Create", movie);
 

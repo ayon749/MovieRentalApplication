@@ -36,22 +36,33 @@ namespace MovieRentalApp.Controllers
 			return View();
 		}
 		[HttpPost]
-		public ActionResult Save(Customer customer)
+		[ValidateAntiForgeryToken]
+		public ActionResult Save([Bind(Exclude = "Id")]Customer customer)
 		{
-			if (customer.id == 0)
+			var errors = ModelState.Values.SelectMany(v => v.Errors);
+			if (!ModelState.IsValid)
 			{
-				db.Customers.Add(customer);
+				ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "id", "Name");
+				return View("New", customer);
+
 			}
 			else
 			{
-				var aCustomer = db.Customers.FirstOrDefault(c => c.id == customer.id);
-				aCustomer.Name = customer.Name;
-				aCustomer.BirthDate = customer.BirthDate;
-				aCustomer.MembershipTypeId = customer.MembershipTypeId;
-				aCustomer.IsSubscribeToNewsLetter = customer.IsSubscribeToNewsLetter; 
+				if (customer.id == 0)
+				{
+					db.Customers.Add(customer);
+				}
+				else
+				{
+					var aCustomer = db.Customers.FirstOrDefault(c => c.id == customer.id);
+					aCustomer.Name = customer.Name;
+					aCustomer.BirthDate = customer.BirthDate;
+					aCustomer.MembershipTypeId = customer.MembershipTypeId;
+					aCustomer.IsSubscribeToNewsLetter = customer.IsSubscribeToNewsLetter;
+				}
+				db.SaveChanges();
+				return RedirectToAction("Index", "Customer");
 			}
-			db.SaveChanges();
-			return RedirectToAction("Index", "Customer");
 		}
 		public ActionResult Edit(int id)
 		{
