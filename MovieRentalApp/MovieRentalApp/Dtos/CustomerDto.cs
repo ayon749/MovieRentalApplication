@@ -15,6 +15,7 @@ namespace MovieRentalApp.Dtos
 		public bool IsSubscribeToNewsLetter { get; set; }
 		
 		public int MembershipTypeId { get; set; }
+		public MembershipTypeDto MembershipType { get; set; }
 	
 		//[Min18YearOfAgeIfAMember]
 		public DateTime? BirthDate { get; set; }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Data.Entity;
 using System.Web.Http;
 
 namespace MovieRentalApp.Controllers.Api
@@ -17,7 +18,7 @@ namespace MovieRentalApp.Controllers.Api
 		//GET/api/Customers
 		public IHttpActionResult GetCustomers()
 		{
-			var customerDto= db.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+			var customerDto= db.Customers.Include(c=>c.MembershipType).ToList().Select(Mapper.Map<Customer,CustomerDto>);
 			return Ok(customerDto);
 		}
 		//GET/api/Customers/1
