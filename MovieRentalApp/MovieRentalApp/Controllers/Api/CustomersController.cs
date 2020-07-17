@@ -56,12 +56,12 @@ namespace MovieRentalApp.Controllers.Api
 		{
 			if (!ModelState.IsValid)
 			{
-				throw new HttpResponseException(HttpStatusCode.BadRequest);
+				return BadRequest();
 			}
 			var customerInDb = db.Customers.SingleOrDefault(c => c.id == id);
 			if (customerInDb == null)
 			{
-				throw new HttpResponseException(HttpStatusCode.NotFound);
+				return NotFound();
 			}
 			Mapper.Map<CustomerDto, Customer>(customerDto, customerInDb);
 			
@@ -78,12 +78,12 @@ namespace MovieRentalApp.Controllers.Api
 		{
 			if (!ModelState.IsValid)
 			{
-				throw new HttpResponseException(HttpStatusCode.BadRequest);
+				return BadRequest();
 			}
 			var customerInDb = db.Customers.SingleOrDefault(c => c.id == id);
 			if (customerInDb == null)
 			{
-				throw new HttpResponseException(HttpStatusCode.NotFound);
+				return NotFound();
 			}
 			db.Customers.Remove(customerInDb);
 			db.SaveChanges();
