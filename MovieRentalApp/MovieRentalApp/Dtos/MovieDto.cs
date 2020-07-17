@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieRentalApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace MovieRentalApp.Dtos
 		
 		public int NumberInStock { get; set; }
 		
-		
+		public GenreDto Genre { get; set; }
 		public int GenreId { get; set; }
 	}
 }

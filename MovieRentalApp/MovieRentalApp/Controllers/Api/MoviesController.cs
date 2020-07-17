@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Data.Entity;
 using System.Web.Http;
 
 namespace MovieRentalApp.Controllers.Api
@@ -17,7 +18,7 @@ namespace MovieRentalApp.Controllers.Api
 		//GET/api/Moives
 		public IHttpActionResult GetMovies()
 		{
-			var movieDto = db.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+			var movieDto = db.Movies.Include(m=>m.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);
 			return Ok(movieDto);
 		}
 
