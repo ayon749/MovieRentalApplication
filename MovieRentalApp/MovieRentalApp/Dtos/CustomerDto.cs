@@ -16,7 +16,7 @@ namespace MovieRentalApp.Dtos
 		
 		public int MembershipTypeId { get; set; }
 	
-		[Min18YearOfAgeIfAMember]
+		//[Min18YearOfAgeIfAMember]
 		public DateTime? BirthDate { get; set; }
 	}
 }
