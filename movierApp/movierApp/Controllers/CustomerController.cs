@@ -14,8 +14,8 @@ namespace movierApp.Controllers
 		// GET: Customer
 		public ActionResult Index()
 		{
-			var customer = db.Customers.Include(c=>c.MembershipType).ToList();
-			return View(customer);
+			//var customer = db.Customers.Include(c=>c.MembershipType).ToList();
+			return View();
 		}
 		//[Route("")]
 		public ActionResult Details(int id)
