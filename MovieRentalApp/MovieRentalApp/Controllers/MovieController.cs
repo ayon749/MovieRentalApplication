@@ -31,8 +31,9 @@ namespace MovieRentalApp.Controllers
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create(Movie movie)
+		public ActionResult Create([Bind(Exclude = "Id")]Movie movie)
 		{
+			var errors = ModelState.Values.SelectMany(v => v.Errors);
 			if (!ModelState.IsValid)
 			{
 				ViewBag.GenreId = new SelectList(db.Genres, "Id", "GenreName");
