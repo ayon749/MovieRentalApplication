@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Runtime.Caching;
 using System.Web.Mvc;
 
 namespace movierApp.Controllers
@@ -15,9 +16,27 @@ namespace movierApp.Controllers
 		// GET: Movie
 		public ActionResult Index()
 		{
-			if(User.IsInRole(RoleName.CanManageMovies))
-			    return View("List");
-			return View("ReadOnlyList");
+			if (User.IsInRole(RoleName.CanManageMovies)) {
+				if (MemoryCache.Default["Genres"] == null)
+				{
+					MemoryCache.Default["Genres"] = db.Genres.ToList();
+				}
+
+				var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
+				return View("List");
+			}
+			else
+			{
+				if (MemoryCache.Default["Genres"] == null)
+				{
+					MemoryCache.Default["Genres"] = db.Genres.ToList();
+				}
+
+				var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+				return View("ReadOnlyList");
+			}
+			
 		}
 		public ActionResult Details(int id)
 		{

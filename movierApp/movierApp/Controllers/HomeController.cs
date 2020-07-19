@@ -6,8 +6,9 @@ using System.Web.Mvc;
 
 namespace movierApp.Controllers
 {
+	[AllowAnonymous]
 	public class HomeController : Controller
-	{	[AllowAnonymous]
+	{	[OutputCache(Duration = 50)]
 		public ActionResult Index()
 		{
 			return View();
