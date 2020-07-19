@@ -12,6 +12,7 @@ namespace movierApp.Controllers.Api
 {
     public class MoviesController : ApiController
     {
+		
 		private ApplicationDbContext db = new ApplicationDbContext();
 
 		//GET/api/Moives
@@ -23,6 +24,7 @@ namespace movierApp.Controllers.Api
 		}
 
 		//Get/api/Movies/1
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public IHttpActionResult GetMovie(int id)
 		{
 			var movie = db.Movies.SingleOrDefault(m => m.id == id);
@@ -35,6 +37,7 @@ namespace movierApp.Controllers.Api
 		}
 		//POST/api/Movies
 		[HttpPost]
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public IHttpActionResult CreateMovie(MovieDto movieDto)
 		{
 			if (!ModelState.IsValid)
@@ -49,6 +52,7 @@ namespace movierApp.Controllers.Api
 
 		//PUT/api/Movies/1
 		[HttpPut]
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
 		{
 			if (!ModelState.IsValid)
@@ -68,6 +72,7 @@ namespace movierApp.Controllers.Api
 		}
 		//DELETE/api/movie/1
 		[HttpDelete]
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public IHttpActionResult DeleteMovie(int id)
 		{
 			if (!ModelState.IsValid)
