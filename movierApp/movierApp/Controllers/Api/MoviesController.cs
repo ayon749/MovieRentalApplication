@@ -15,6 +15,7 @@ namespace movierApp.Controllers.Api
 		private ApplicationDbContext db = new ApplicationDbContext();
 
 		//GET/api/Moives
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public IHttpActionResult GetMovies()
 		{
 			var movieDto = db.Movies.Include(m => m.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);

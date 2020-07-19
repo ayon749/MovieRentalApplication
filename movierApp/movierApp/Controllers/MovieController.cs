@@ -15,14 +15,16 @@ namespace movierApp.Controllers
 		// GET: Movie
 		public ActionResult Index()
 		{
-			var movies = db.Movies.Include(a => a.Genre).ToList();
-			return View(movies);
+			if(User.IsInRole(RoleName.CanManageMovies))
+			    return View("List");
+			return View("ReadOnlyList");
 		}
 		public ActionResult Details(int id)
 		{
 			var movies = db.Movies.Include(c => c.Genre).FirstOrDefault(a => a.id == id);
 			return View(movies);
 		}
+		[Authorize(Roles =RoleName.CanManageMovies)]
 		public ActionResult Create()
 		{
 			ViewBag.GenreId = new SelectList(db.Genres, "Id", "GenreName");
@@ -57,6 +59,7 @@ namespace movierApp.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index", "Movie");
 		}
+		[Authorize(Roles = RoleName.CanManageMovies)]
 		public ActionResult Edit(int id)
 		{
 			var movie = db.Movies.FirstOrDefault(a => a.id == id);

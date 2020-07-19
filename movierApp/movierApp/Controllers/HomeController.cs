@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace movierApp.Controllers
 {
 	public class HomeController : Controller
-	{
+	{	[AllowAnonymous]
 		public ActionResult Index()
 		{
 			return View();
