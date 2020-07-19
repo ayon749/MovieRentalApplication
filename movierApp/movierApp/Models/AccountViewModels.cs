@@ -5,7 +5,8 @@ namespace movierApp.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+		
+		[Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -64,7 +65,10 @@ namespace movierApp.Models
 
     public class RegisterViewModel
     {
-        [Required]
+		[Required]
+		[Display(Name = "Driving License")]
+		public string DrivingLicense { get; set; }
+		[Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
