@@ -16,9 +16,15 @@ namespace movierApp.Controllers.Api
 		private ApplicationDbContext db = new ApplicationDbContext();
 
 		//GET/api/Customers
-		public IHttpActionResult GetCustomers()
+		public IHttpActionResult GetCustomers(string query=null)
 		{
-			var customerDto = db.Customers.Include(c => c.MembershipType).ToList().Select(Mapper.Map<Customer, CustomerDto>);
+			var customersQuery = db.Customers.Include(c => c.MembershipType);
+			if (!string.IsNullOrWhiteSpace(query))
+			{
+				customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+			}
+				
+			var customerDto=customersQuery.Select(Mapper.Map<Customer, CustomerDto>);
 			return Ok(customerDto);
 		}
 		//GET/api/Customers/1

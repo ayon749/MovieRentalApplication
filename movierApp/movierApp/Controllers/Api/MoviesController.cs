@@ -17,9 +17,17 @@ namespace movierApp.Controllers.Api
 
 		//GET/api/Moives
 		[Authorize(Roles = RoleName.CanManageMovies)]
-		public IHttpActionResult GetMovies()
+		public IHttpActionResult GetMovies(string query=null)
 		{
-			var movieDto = db.Movies.Include(m => m.Genre).ToList().Select(Mapper.Map<Movie, MovieDto>);
+			var moviesQuery = db.Movies.Include(m => m.Genre);
+			if (!string.IsNullOrWhiteSpace(query))
+			{
+				moviesQuery = moviesQuery.Where(m => m.MovieName.Contains(query));
+				moviesQuery = moviesQuery.Where(m => m.NumberAvailable>=0);
+			}
+				
+				
+			var movieDto=moviesQuery.ToList().Select(Mapper.Map<Movie, MovieDto>);
 			return Ok(movieDto);
 		}
 

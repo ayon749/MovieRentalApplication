@@ -20,5 +20,7 @@ namespace movierApp.Models
 		public Genre Genre { get; set; }
 		[Required(ErrorMessage = "Genre stock is required")]
 		public int GenreId { get; set; }
+
+		public int NumberAvailable { get; set; }
 	}
 }
