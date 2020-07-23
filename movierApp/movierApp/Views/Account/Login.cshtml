@@ -1,63 +1,163 @@
 ﻿@using movierApp.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Log in";
+	ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+
+<div class="limiter">
+	<div class="container-login100" >
+
+		<div class="row" style="background-color: #fff">
+			
+			
+
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<section id="loginForm">
+					<span class="login100-form-title p-b-53">
+						Sign In With
+					</span>
+
+					<div class="col-md-12 " style="margin: 10px">
+						<section class="fixed center " style="margin-left: 100px"  id="socialLoginForm">
+							@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel {ReturnUrl = ViewBag.ReturnUrl})
+						</section>
+					</div>
+					<div class="col-md-12 " style="margin: 10px">
+						<p class="center" style="margin-left: 175px">or</p>
+					</div>
+					@using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+					{
+						@Html.AntiForgeryToken()
+
+						@Html.ValidationSummary(true, "", new {@class = "text-danger"})
+						<div class="form-group">
+							@Html.LabelFor(m => m.Email, new {@class = "col-md-2 control-label"})
+							<div class="col-md-10">
+								@Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+								@Html.ValidationMessageFor(m => m.Email, "", new {@class = "text-danger"})
+							</div>
+						</div>
+						<div class="form-group">
+							@Html.LabelFor(m => m.Password, new {@class = "col-md-2 control-label"})
+							<div class="col-md-10">
+								@Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+								@Html.ValidationMessageFor(m => m.Password, "", new {@class = "text-danger"})
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<div class="checkbox">
+									@Html.CheckBoxFor(m => m.RememberMe)
+									@Html.LabelFor(m => m.RememberMe)
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<input type="submit" value="Log in" class="btn btn-default"/>
+							</div>
+						</div>
+						<p>
+							@Html.ActionLink("Register as a new user", "Register")
+						</p>
+
+						@* Enable this once you have account confirmation enabled for password reset functionality
+					<p>
+						@Html.ActionLink("Forgot your password?", "ForgotPassword")
+					</p>*@
+					}
+				</section>
+
+			</div>
+
+		</div>
+	</div>
 </div>
 
+
+@*<div class="limiter">
+		<div class="container-login100" style="background-image: url('Login_v5/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-53">
+						Sign In With
+					</span>
+
+					<a href="#" class="btn-face m-b-20">
+						<i class="fa fa-facebook-official"></i>
+						Facebook
+					</a>
+
+					<a href="#" class="btn-google m-b-20">
+						<img src="images/icons/icon-google.png" alt="GOOGLE">
+						Google
+					</a>
+
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">
+							Username
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<input class="input100" type="text" name="username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="p-t-13 p-b-9">
+						<span class="txt1">
+							Password
+						</span>
+
+						<a href="#" class="txt2 bo1 m-l-5">
+							Forgot?
+						</a>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn">
+							Sign In
+						</button>
+					</div>
+
+					<div class="w-full text-center p-t-55">
+						<span class="txt2">
+							Not a member?
+						</span>
+
+						<a href="#" class="txt2 bo1">
+							Sign up now
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/bootstrap/js/popper.js"></script>
+	<script src="Login_v5/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/daterangepicker/moment.min.js"></script>
+	<script src="Login_v5/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="Login_v5/js/main.js"></script>*@
+
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryval")
 }

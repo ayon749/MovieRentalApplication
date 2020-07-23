@@ -32,6 +32,7 @@ namespace movierApp
 						"~/Content/datatables/css/datatables.bootstrap.css",
 					  "~/Content/site.css",
 					  "~/Content/typeahead.css",
+					  "~/Content/bootstrap-theme.css",
 					  "~/Content/toastr.css"));
 		}
 	}
