@@ -12,7 +12,7 @@
 	@*<link href="~/HomeTheme/css/bootstrap.css" rel="stylesheet" />*@
 	<link href="~/HomeTheme/css/font-awesome.css" rel="stylesheet" />
 	<link href="~/HomeTheme/css/style.css" rel="stylesheet" />
-
+	<link href="~/Sign_upTheme/css/style.css" rel="stylesheet" />
 	@*<a href="~/HomeTheme/fonts/fontawesome-webfont.eot">~/HomeTheme/fonts/fontawesome-webfont.eot</a>
 	<img src="~/HomeTheme/fonts/fontawesome-webfont.svg" />
 	<a href="~/HomeTheme/fonts/fontawesome-webfont.ttf">~/HomeTheme/fonts/fontawesome-webfont.ttf</a>
@@ -46,12 +46,12 @@
 </head>
 <body>
    @Html.Partial("_NavBar")
-    <div class="container body-content"style="background-image: url('../../Login_v5/images/bg-01.jpg');">
+    <div class="body-content"style="background-image: url('../../Login_v5/images/bg-01.jpg');">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mushfiqur Rahman Application</p>
-        </footer>
+        <footer style="background-color: darkcyan">
+	        <p>&copy; @DateTime.Now.Year - Mushfiqur Rahman Application</p>
+        </footer >
     </div>
 
     @Scripts.Render("~/bundles/lib")

@@ -8,7 +8,7 @@
 <div class="limiter">
 	<div class="container-login100" >
 
-		<div class="row" style="background-color: #fff">
+		<div class="row" style="background-color: #000000">
 			
 			
 
@@ -47,9 +47,9 @@
 						</div>
 						<div class="form-group">
 							<div class="col-md-offset-2 col-md-10">
-								<div class="checkbox m-r-1">
-									@Html.CheckBoxFor(m => m.RememberMe)
-									@Html.LabelFor(m => m.RememberMe)
+								<div class="checkbox">
+									@Html.CheckBoxFor(m => m.RememberMe, new { style = "float:right" })
+									@Html.LabelFor(m => m.RememberMe,new{style="float:left"})
 									
 								</div>
 							</div>

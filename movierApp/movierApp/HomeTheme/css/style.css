@@ -1149,10 +1149,11 @@ a.w3pvt_google {
 
 .form-group label {
     font-size: 0.9em;
-    color: #666;
+    color: #fff;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
+	margin-right: 2px;
 }
 
 .w3layouts-contact-fm {
@@ -1167,9 +1168,9 @@ a.w3pvt_google {
     font-size: 14px;
     text-transform: capitalize;
     letter-spacing: 2px;
-    width: 100%;
+   
     border: 1px solid #ddd;
-    text-align: center;
+   
     background: #F9FAFF;
 }
 

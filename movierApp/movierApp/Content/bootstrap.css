@@ -2553,6 +2553,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
+	text-align: left;
   color: #555;
   background-color: #fff;
   background-image: none;
@@ -2982,7 +2983,7 @@ select[multiple].input-lg {
   .form-horizontal .control-label {
     padding-top: 7px;
     margin-bottom: 0;
-    text-align: right;
+   
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
